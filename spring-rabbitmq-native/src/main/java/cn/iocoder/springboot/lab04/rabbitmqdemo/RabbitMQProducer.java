@@ -7,17 +7,33 @@ import com.rabbitmq.client.MessageProperties;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
-
+/**
+ * @Author: wuyong
+ * @Description: rabbitmq producer test
+ * @DateTime: 2023/2/9 18:06
+ **/
 public class RabbitMQProducer {
 
-    private static final String IP_ADDRESS = "127.0.0.1";
+    private static final String IP_ADDRESS = "114.115.138.227";
     private static final Integer PORT = 5672;
-    private static final String USERNAME = "guest";
-    private static final String PASSWORD = "guest";
+    private static final String USERNAME = "admin";
+    private static final String PASSWORD = "admin";
 
+    /**
+     * 交换器
+     */
     private static final String EXCHANGE_NAME = "exchange_demo";
+
+    /**
+     * 路由
+     */
     private static final String ROUTING_KEY = "routingkey_demo";
-    public static final String QUEUE_NAME = "queue_demo"; // 只有 QUEUE_NAME 需要共享给 RabbitMQConsumer
+
+    /**
+     * 只有 QUEUE_NAME 需要共享给 RabbitMQConsumer
+     * 消息队列
+     */
+    public static final String QUEUE_NAME = "queue_demo";
 
     public static void main(String[] args) throws IOException, TimeoutException {
         // 创建连接
@@ -31,7 +47,7 @@ public class RabbitMQProducer {
 
         // 发送 3 条消息
         for (int i = 0; i < 3; i++) {
-            String message = "Hello World" + i;
+            String message = "Hello RabbitMQ" + i;
             channel.basicPublish(EXCHANGE_NAME, ROUTING_KEY, MessageProperties.PERSISTENT_TEXT_PLAIN, message.getBytes());
         }
 

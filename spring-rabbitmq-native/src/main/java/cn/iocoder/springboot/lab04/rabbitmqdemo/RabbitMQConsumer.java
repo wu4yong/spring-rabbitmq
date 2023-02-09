@@ -6,6 +6,11 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
+/**
+ * @Author: wuyong
+ * @Description: rabbitmq consumer test
+ * @DateTime: 2023/2/9 18:06
+ **/
 public class RabbitMQConsumer {
 
     public static void main(String[] args) throws IOException, TimeoutException {
@@ -14,16 +19,16 @@ public class RabbitMQConsumer {
 
         // 创建信道
         final Channel channel = connection.createChannel();
-        channel.basicQos(64); // 设置客户端最多接收未被 ack 的消息数量为 64 。
+
+        // 设置客户端最多接收未被 ack 的消息数量为 64
+        channel.basicQos(64);
 
         // 创建消费者
         Consumer consumer = new DefaultConsumer(channel) {
-
             @Override
             public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
                 // 打印日志
-                System.out.println(String.format("[线程：%s][路由键：%s][消息内容：%s]",
-                        Thread.currentThread(), envelope.getRoutingKey(), new String(body)));
+                System.out.println(String.format("[线程：%s][路由键：%s][消息内容：%s]", Thread.currentThread(), envelope.getRoutingKey(), new String(body)));
                 // ack 消息已经消费
                 channel.basicAck(envelope.getDeliveryTag(), false);
             }
