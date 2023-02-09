@@ -7,6 +7,11 @@ import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
+/**
+ * @Author: wuyong
+ * @Description: Direct Exchange Consumer
+ * @DateTime: 2023/2/9 18:06
+ **/
 @Component
 @RabbitListener(queues = Demo01Message.QUEUE)
 public class Demo01Consumer {

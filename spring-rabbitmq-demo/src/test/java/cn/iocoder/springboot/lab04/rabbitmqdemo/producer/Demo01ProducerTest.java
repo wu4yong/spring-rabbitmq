@@ -12,6 +12,11 @@ import org.springframework.util.concurrent.ListenableFutureCallback;
 
 import java.util.concurrent.CountDownLatch;
 
+/**
+ * @Author: wuyong
+ * @Description: Direct Exchange Test
+ * @DateTime: 2023/2/9 18:06
+ **/
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class)
 public class Demo01ProducerTest {

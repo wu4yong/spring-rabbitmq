@@ -8,6 +8,11 @@ import org.springframework.scheduling.annotation.AsyncResult;
 import org.springframework.stereotype.Component;
 import org.springframework.util.concurrent.ListenableFuture;
 
+/**
+ * @Author: wuyong
+ * @Description: Direct Exchange Producer
+ * @DateTime: 2023/2/9 18:06
+ **/
 @Component
 public class Demo01Producer {
 

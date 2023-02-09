@@ -8,6 +8,11 @@ import org.springframework.amqp.core.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * @Author: wuyong
+ * @Description: Direct Exchange 示例的配置类
+ * @DateTime: 2023/2/9 18:06
+ **/
 @Configuration
 public class RabbitConfig {
 
