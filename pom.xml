@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.10.RELEASE</version>
+        <relativePath/>
+        <!-- lookup parent from repository -->
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>spring-rabbitmq</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>spring-rabbitmq-native</module>
+        <module>spring-rabbitmq-demo</module>
+        <module>spring-rabbitmq-demo-batch</module>
+        <module>spring-rabbitmq-demo-batch-consume</module>
+        <module>spring-rabbitmq-demo-batch-consume-02</module>
+        <module>spring-rabbitmq-consume-retry</module>
+        <module>spring-rabbitmq-demo-delay</module>
+        <module>spring-rabbitmq-demo-message-model</module>
+        <module>spring-rabbitmq-demo-concurrency</module>
+        <module>spring-rabbitmq-demo-orderly</module>
+        <module>spring-rabbitmq-demo-transaction</module>
+        <module>spring-rabbitmq-demo-ack</module>
+        <module>spring-rabbitmq-demo-confirm</module>
+        <module>spring-rabbitmq-demo-confirm-async</module>
+        <module>spring-rabbitmq-demo-rpc</module>
+        <module>spring-rabbitmq-demo-json</module>
+        <module>spring-rabbitmq-demo-error-handler</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.rabbitmq</groupId>
+            <artifactId>amqp-client</artifactId>
+            <version>5.5.3</version>
+        </dependency>
+    </dependencies>
+
+</project>
