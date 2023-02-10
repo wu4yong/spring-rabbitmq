@@ -46,6 +46,11 @@ public class RabbitConfig {
 
     }
 
+    /**
+     * 在 #messageConverter() 方法，创建 Jackson2JsonMessageConverter Bean 对象。
+     * 后续，RabbitAutoConfiguration.RabbitTemplateConfiguration 在创建 RabbitTemplate Bean 时，会自动注入它。
+     * @return
+     */
     @Bean
     public MessageConverter messageConverter() {
         return new Jackson2JsonMessageConverter();
