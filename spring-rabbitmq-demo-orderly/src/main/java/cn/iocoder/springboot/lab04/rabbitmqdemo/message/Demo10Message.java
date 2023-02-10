@@ -10,8 +10,13 @@ public class Demo10Message implements Serializable {
     public static final String QUEUE_2 = QUEUE_BASE + "2";
     public static final String QUEUE_3 = QUEUE_BASE + "3";
 
+    /**
+     * 基于消息的用户编号取余
+     */
     public static final int QUEUE_COUNT = 4;
-
+    /**
+     * 统一交换器名称
+     */
     public static final String EXCHANGE = "EXCHANGE_DEMO_10";
 
     /**
